@@ -4,13 +4,23 @@ class Book {
         this.author = author;
         this.pages = pages;
         this.read = read;
-        this.info = () => {
-            return `${title} by ${author}, ${pages} pages, ${read ? 'read' : 'not read yet'}`;
+        this.info = function() {
+            return `${this.title} by ${this.author}, ${this.pages} pages, ${this.read ? 'read' : 'not read yet'}`;
         };
+    }
+
+    set setRead(value) {
+        this.read = value;
     }
 }
 
-theHobbit = new Book('The Hobbit', 'J.R.R Tolkien', 295, false);
+function addBooks(title, author, pages, read, library) {
+    let newBook = new Book(title, author, pages, read);
+    library.push(newBook);
+} 
 
-console.log(theHobbit.info());
+const book1 = new Book('The Hobbit', 'J.R.R Tolkien', 295, false);
+const book2 = new Book('Atomic Habits', 'James Clear ', 306, true);
+const book3 = new Book('Book3', 'MyBook', 420, false);
 
+const Library = [book1, book2, book3];
