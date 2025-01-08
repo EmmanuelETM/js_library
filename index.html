@@ -8,11 +8,38 @@
     <script src="https://kit.fontawesome.com/8cb92f0333.js" crossorigin="anonymous"></script>
 </head>
 <body>
+
     <header>
         <h1>This is a Library</h1>
+        <button class="add-book">Add Book</button>
     </header>
     <main>
         <section class="cards-container"></section>
+
+        <dialog id="dialog" data-modal>
+            <p>Greetings, one and all!</p>
+            <form action="app.js" method="post" id="form"">
+                <div>
+                    <label for="title">Title</label>
+                    <input type="text" id="title" name="title" placeholder="The Hobbit..." required>
+                </div>
+                <div>
+                    <label for="author">Author</label>
+                    <input type="text" id="author" name="author" placeholder="J.R.R Tolkien..." required>
+                </div>
+                <div>
+                    <label for="pages">Pages</label>
+                    <input type="number" id="pages" name="pages" required>
+                </div>
+                <div>
+                    <label for="read">Not read yet?</label>
+                    <input type="checkbox" id="read" name="read">
+                </div>
+                <button class="submit" type="submit">
+                    Add Book
+                </button>
+            </form>
+        </dialog>
     </main>
     <footer>
         copyright © 2025 <a href="https://github.com/EmmanuelETM/"> | Emmanuel_ETM <i class="fa-brands fa-github"></i></a>
@@ -20,3 +47,4 @@
     <script src="app.js"></script>
 </body>
 </html>
+

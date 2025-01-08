@@ -28,12 +28,32 @@ function displayBooks(library) {
     });
 }
 
+function handleFormSubmit(event) {
+    event.preventDefault();
+    let data = new FormData(event.target);
+    const obj = Object.fromEntries(data.entries());
+    form.reset();
+    dialog.close();
+}
 
 const container = document.querySelector('.cards-container');
+const addBtn = document.querySelector('.add-book');
+const dialog = document.querySelector('#dialog');
+const form = document.querySelector('#form');
+
 const book1 = new Book('The Hobbit', 'J.R.R Tolkien', 295, false);
 const book2 = new Book('Atomic Habits', 'James Clear ', 306, true);
 const book3 = new Book('Book3', 'MyBook', 420, false);
+const Library = [book1, book2, book2, book3, book3, book2];
 
-const Library = [book1, book2, book2, book3, book3, book2, ];
 
-displayBooks(Library);
+
+addBtn.addEventListener('click', (event) => {
+    dialog.showModal();
+})
+
+form.addEventListener('submit', (event) => handleFormSubmit(event));
+
+
+
+// displayBooks(Library);

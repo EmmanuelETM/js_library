@@ -16,7 +16,7 @@ body {
     font-optical-sizing: auto;
     font-weight: 400;
     font-style: normal;
-    font-size: 1rem;
+    font-size: 2rem;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -53,6 +53,21 @@ a {
     text-decoration: none;
     color: white;
 }
+
+dialog {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgb(31, 41, 55);
+    border: 1px white solid;
+    border-radius: 1rem;
+    padding: 2rem; 
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25); 
+    color: white; 
+    width: 90%; 
+    max-width: 500px; 
+}
+
 
 .cards-container {
     width: 100%;
