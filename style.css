@@ -11,42 +11,73 @@
     /* border: 1px white solid; */
 }
 
-body {
+/* body {
+
+    display: flex;
+
+    flex-direction: column;
+    
+    
+    
+} */
+
+html, body {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
     font-family: "Outfit", serif;
     font-optical-sizing: auto;
     font-weight: 400;
     font-style: normal;
     font-size: 2rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    height: 100vh;
     color: white;
     background-color: rgb(17 24 39);
+    overflow: auto;
+    text-align: center;
+    height: 100vh;
 }
 
-header, main, footer {
-    width: 100%;
-    text-align: center;
-}
+
 
 header {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    top: 0;
+    z-index: 10;
+    padding: 1.2rem;
     background-color: rgb(55 65 81);
 }
 
 main {
     flex: 1;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+    gap: 2rem;
 }
 
 footer {
     padding: 1rem;
+    margin: 1rem 0;
+}
+
+.button-container {
+    padding-top: 5rem;
+}
+
+.cards-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-auto-rows: 250px;
+    gap: 1.5rem;
+    width: 80%;
+    height: 100%;
+    padding: 2rem;
+}
+
+.card {
+    padding: 1rem;
+    background-color: rgb(55 65 81);
+    border-radius: 1rem;
 }
 
 a {
@@ -66,6 +97,33 @@ dialog {
     color: white; 
     width: 90%; 
     max-width: 500px; 
+    opacity: 0;
+    transition: all 0.3s allow-discrete;
+}
+
+dialog[open] {
+    opacity: 1;
+}
+
+@starting-style {
+    dialog[open] {
+        opacity: 0;
+    }
+}
+
+dialog::backdrop {
+    background-color: rgba(0,0,0,0);
+    transition: all 0.3s allow-discrete;
+}
+
+dialog[open]::backdrop {
+    background-color: rgba(0,0,0,0.6);
+}
+
+@starting-style {
+    dialog[open]::backdrop {
+        opacity: 0;
+    }
 }
 
 .form-container {
@@ -95,20 +153,22 @@ dialog {
 .left, .right {
     display: flex;
     flex-direction: column;
-    gap: 0.5rem;
+    gap: 1rem;
     flex: 1;
 }
 
 button.add-book, button.submit {
-    align-self: center;
     background-color: rgb(30 64 175);
     color: white;
     border: none;
-    padding: 0.5rem 1rem;
-    border-radius: 0.5rem;
+    padding: 1rem 1.5rem;
+    border-radius: 0.8rem;
     cursor: pointer;
-    font-size: 1rem;
-    margin-top: 1rem;
+    font-size: 1.5rem;
+}
+
+button.submit {
+    margin-top: 2rem;
 }
 
 button.add-book:hover, button.submit:hover {
@@ -116,18 +176,18 @@ button.add-book:hover, button.submit:hover {
 }
 
 button.close-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     background-color: rgb(30 41 59);
+    color: white;
     width: 2.4rem;
     height: 2.4rem;
     border-radius: 50%;
     border: none;
-    color: white;
-    font-size: 1.2rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    font-size: 1.2rem;
+    cursor: pointer;
     transition: transform 0.2s;
 }
 
@@ -137,7 +197,7 @@ button.close-button:hover {
 }
 
 label {
-    font-size: 0.9rem;
+    font-size: 1.5rem;
     margin-bottom: 0.2rem;
 }
 
@@ -145,7 +205,7 @@ input[type="text"], input[type="number"], input[type="checkbox"] {
     padding: 0.5rem;
     border: 1px solid #ccc;
     border-radius: 0.3rem;
-    font-size: 0.9rem;
+    font-size: 1.5rem;
     width: 100%;
 }
 
@@ -157,25 +217,6 @@ input[type="checkbox"] {
     display: flex;
     justify-content: flex-end;
     align-items: center;
-}
-
-.cards-container {
-    width: 100%;
-    height: 100%;
-    padding: 2rem;
-    display: flex;
-    align-items: flex-start;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 1.5rem;
-}
-
-.card {
-    padding: 1rem;
-    width: 20rem;
-    height: 25rem;
-    background-color: rgb(55 65 81);
-    border-radius: 1rem;
 }
 
 

@@ -8,6 +8,19 @@
     <script src="https://kit.fontawesome.com/8cb92f0333.js" crossorigin="anonymous"></script>
 </head>
 <body>
+    <header>
+        <h1>This is a library</h1>
+    </header>
+    <main>
+        <section class="button-container">
+            <button class="add-book header-button"><i class="fa-solid fa-plus"></i> Add Book</button>
+        </section>
+        <section class="cards-container"></section>
+    </main>
+    <footer>
+        copyright © 2025 <a href="https://github.com/EmmanuelETM/"> | Emmanuel_ETM <i class="fa-brands fa-github"></i></a>
+    </footer>
+
     <dialog id="dialog" data-modal>
         <div class="form-container">
             <div class="close-dialog">
@@ -20,7 +33,7 @@
                     <div class="left">
                         <div>
                             <label for="title">Title</label>
-                            <input type="text" id="title" name="title" placeholder="The Hobbit..." required>
+                            <input type="text" id="title" name="title" placeholder="The Hobbit..." autofocus required>
                         </div>
                         <div>
                             <label for="author">Author</label>
@@ -44,16 +57,7 @@
             </form>
         </div>
     </dialog>
-    <header>
-        <h1>This is a Library</h1>
-        <button class="add-book"><i class="fa-solid fa-plus"></i> Add Book</button>
-    </header>
-    <main>
-        <section class="cards-container"></section>
-    </main>
-    <footer>
-        copyright © 2025 <a href="https://github.com/EmmanuelETM/"> | Emmanuel_ETM <i class="fa-brands fa-github"></i></a>
-    </footer>
+
     <script src="app.js"></script>
 </body>
 </html>
