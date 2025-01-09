@@ -147,7 +147,7 @@ let dataObj = null;
 const book1 = new Book('The Hobbit', 'J.R.R Tolkien', 295, false);
 const book2 = new Book('Atomic Habits', 'James Clear ', 306, true);
 const book3 = new Book('Book3', 'MyBook', 420, false);
-const Library = [book1, book2, book1, book2];
+const Library = [book1, book2, book1, book2, book1];
 
 MyApp();
 
