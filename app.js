@@ -23,7 +23,7 @@ function displayBooks(library) {
 }
 
 function deleteBook (event) {
-    let card = event.target.parentElement;
+    let card = event.target.closest('.card');
     const BookIndex = Number(card.getAttribute('data-index'));
     Library.splice(BookIndex, 1);
     displayBooks(Library);
